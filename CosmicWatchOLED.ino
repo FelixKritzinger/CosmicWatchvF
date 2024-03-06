@@ -230,8 +230,11 @@ void get_time()
       //if (SLAVE  == 1) {display.println(F("::---   SLAVE   ---::"));}}
       
   else{
-      if (last_sipm_voltage > 180){
-          display.print(F("===---- WOW! ----==="));}
+      if (last_sipm_voltage > 120){ //made lower as this code messes up display, originally 180
+          display.print((String)detector_name);
+          if (MASTER == 1) {display.print(F("1"));}
+          if (SLAVE  == 1) {display.print(F("2"));}
+          display.print(F("   !!!"));}
       else{
             display.print((String)detector_name);
             if (MASTER == 1) {display.print(F("1"));}
